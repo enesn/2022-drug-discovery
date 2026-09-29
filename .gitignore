@@ -1,0 +1,32 @@
+# Large data files (>100 MB; small input files are tracked)
+input_data/KPSS_2020_public.csv
+input_data/patentview_nber.tsv
+input_data/pharma_compustat.dta
+input_data/clean_litigation_data.csv
+input_data/clean_patent_data.csv
+input_data/compustat_2_11_20.dta
+
+# Binaries / installers
+TinyTeX.tgz
+
+# R / RStudio / Positron
+.Rhistory
+.RData
+.Rproj.user/
+.Rprofile
+.Rprof ile
+
+# LaTeX / logs
+*.log
+
+# Old material
+archieve/
+
+# macOS
+.DS_Store
+
+# Generated outputs
+output_figures/*
+!output_figures/.gitkeep
+output_tables/*
+!output_tables/.gitkeep
