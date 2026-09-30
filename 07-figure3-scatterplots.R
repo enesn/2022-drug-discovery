@@ -8,8 +8,6 @@
 # EI
 ## ===========================================================================================#
 
-#call samples 
-source(file = "empirical_analysis_sample_selection.R")
 
 # means <- sample_top50 %>% group_by(gvkey) %>% 
 #   dplyr::summarise(
@@ -59,7 +57,7 @@ fig3a <- sample_top50 %>% group_by(gvkey, period2) %>%
        y = "Avg. R&D exp. in the next 5-year period") +
   enes_theme
 
-pdf("output_figures/fig3a.pdf", width = 12.17, height = 7.92)
+pdf("figures-included/fig3a.pdf", width = 12.17, height = 7.92)
 print(fig3a)
 dev.off()
 
@@ -89,7 +87,7 @@ fig3b <- sample_top50 %>% group_by(gvkey, period) %>%
   # geom_hline(yintercept = means$nda, linetype = "dashed", size = 1) +
   enes_theme
 
-pdf("output_figures/fig3b.pdf", width = 12.17, height = 7.92)
+pdf("figures-included/fig3b.pdf", width = 12.17, height = 7.92)
 print(fig3b)
 dev.off()
 
@@ -119,6 +117,6 @@ fig3c <-sample_top50 %>% group_by(gvkey, period) %>%
   # geom_hline(yintercept = means$nda, linetype = "dashed", size = 1) +
   enes_theme
 
-pdf("output_figures/fig3c.pdf", width = 12.17, height = 7.92)
+pdf("figures-included/fig3c.pdf", width = 12.17, height = 7.92)
 print(fig3c)
 dev.off()

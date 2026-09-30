@@ -9,8 +9,6 @@
 ## ===========================================================================================#
 library(stargazer)
 library(dyn)
-#call samples 
-source(file = "empirical_analysis_sample_selection.R")
 
 ## =================================  Supplementary models ===================================#
 ## ============================  Models with traditional variables ===============================#

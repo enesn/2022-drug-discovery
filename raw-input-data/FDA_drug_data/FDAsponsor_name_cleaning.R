@@ -1,10 +1,10 @@
 
 # combine the splitted FDA Drug data 
-fda_submissions <- read_tsv("input_data/FDA_drug_data/FDA_Submissions.txt") 
-fda_applications <- read_tsv("input_data/FDA_drug_data/FDA_Applications.txt")  
-fda_applications_docs <- read_tsv("input_data/FDA_drug_data/FDA_ApplicationDocs.txt")  %>% select(ApplNo, ApplicationDocsDate)
-fda_subclass <- read_tsv("input_data/FDA_drug_data/FDA_SubmissionClass_Lookup.txt")
-fda_products <- read_tsv("input_data/FDA_drug_data/FDA_Products.txt")
+fda_submissions <- read_tsv("raw-input-data/FDA_drug_data/FDA_Submissions.txt") 
+fda_applications <- read_tsv("raw-input-data/FDA_drug_data/FDA_Applications.txt")  
+fda_applications_docs <- read_tsv("raw-input-data/FDA_drug_data/FDA_ApplicationDocs.txt")  %>% select(ApplNo, ApplicationDocsDate)
+fda_subclass <- read_tsv("raw-input-data/FDA_drug_data/FDA_SubmissionClass_Lookup.txt")
+fda_products <- read_tsv("raw-input-data/FDA_drug_data/FDA_Products.txt")
 
 fda_drug <- left_join(fda_applications, fda_products, by = "ApplNo") %>% 
   left_join(fda_applications_docs, by = "ApplNo") %>%

@@ -11,7 +11,7 @@
 ## ================================      NFC vs. Pharma   ====================================# 
 
 #Entire Compustat sample
-compustat <- read_dta("input_data/compustat_2_11_20.dta")
+compustat <- read_dta("raw-input-data/compustat_2_11_20.dta")
 
 #NFC - Finance - Pharma classification
 compustat$overall_class <- ifelse(
@@ -201,7 +201,7 @@ nfc_pharma <- ggplot(
   # geom_dl(aes(label=overall_class), method="last.points") +
   scale_x_continuous(breaks = seq(1980, 2018, 2)) 
 
-pdf("output_figures/nfc_vs_pharma.pdf", width = 12.17, height = 7.92)
+pdf("figures-included/nfc_vs_pharma.pdf", width = 12.17, height = 7.92)
 print(nfc_pharma)
 dev.off()
 

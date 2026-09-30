@@ -11,8 +11,6 @@
 library(dyn)
 library(stargazer)
 library(sjPlot)
-#call samples 
-source(file = "empirical_analysis_sample_selection.R")
 
 ## ====================================  Benchmark models ===================================#
 

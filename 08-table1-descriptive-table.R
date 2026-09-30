@@ -215,7 +215,7 @@ desc_table <- rbind(desc_table_firm_i, desc_table_firm_ii)
 
 write_excel_csv(
 desc_table %>% 
-  mutate_if(is.numeric, round, digits = 2), file = "output_tables/desc_table.csv"
+  mutate_if(is.numeric, round, digits = 2), file = "tables-included/desc_table.csv"
 )
 
 # 
@@ -253,7 +253,7 @@ desc_table %>%
 #        subtitle= "Top drug producing firms existing during the entire sample period with at least one NDA during the entire sample period") + 
 #   coord_flip() 
 # 
-# pdf("output_figures/period_1rd.pdf", width = 12.17, height = 7.92)
+# pdf("figures-included/period_1rd.pdf", width = 12.17, height = 7.92)
 # print(period_1rd)
 # dev.off()
 # 
@@ -293,7 +293,7 @@ desc_table %>%
 #        subtitle= "Top drug producing firms existing during the entire sample period with at least one NDA during the entire sample period") + 
 #   coord_flip() 
 # 
-# pdf("output_figures/period_2cf.pdf", width = 12.17, height = 7.92)
+# pdf("figures-included/period_2cf.pdf", width = 12.17, height = 7.92)
 # print(period_2cf)
 # dev.off()
 # 
@@ -307,7 +307,7 @@ desc_table %>%
 #        subtitle= "Top drug producing firms existing during the entire sample period with at least one NDA during the entire sample period") + 
 #   coord_flip() 
 # 
-# pdf("output_figures/period_2nda.pdf", width = 12.17, height = 7.92)
+# pdf("figures-included/period_2nda.pdf", width = 12.17, height = 7.92)
 # print(period_2nda)
 # dev.off()
 # 
@@ -320,7 +320,7 @@ desc_table %>%
 #        subtitle= "Top drug producing firms existing during the entire sample period with at least one NDA during the entire sample period") + 
 #   coord_flip() 
 # 
-# pdf("output_figures/period_2rdb.pdf", width = 12.17, height = 7.92)
+# pdf("figures-included/period_2rdb.pdf", width = 12.17, height = 7.92)
 # print(period_2rd)
 # dev.off()
 # 
@@ -337,7 +337,7 @@ desc_table %>%
 #   labs(y = "Period averages and sums", x = "Periods", title = "All drug producing TOP firms in the Compustat") +
 #   enes_theme
 # 
-# pdf("output_figures/desc_agg_all_TOP.pdf", width = 12.17, height = 7.92)
+# pdf("figures-included/desc_agg_all_TOP.pdf", width = 12.17, height = 7.92)
 # print(desc_agg_all)
 # dev.off()
 # 
@@ -388,7 +388,7 @@ desc_table %>%
 #        subtitle = "All drug producing TOP firms")+ 
 #   enes_theme
 # 
-# pdf("output_figures/rd_drug_TOP.pdf", width = 12.17, height = 7.92)
+# pdf("figures-included/rd_drug_TOP.pdf", width = 12.17, height = 7.92)
 # print(rd_drug)
 # dev.off()
 # 
