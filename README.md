@@ -1,8 +1,8 @@
 # Profitability and Drug Discovery
 
-Replication files for Işık and Orhangazi (2022), "Profitability and drug discovery," *Industrial and Corporate Change* ([doi:10.1093/icc/dtac011](https://doi.org/10.1093/icc/dtac011)). The code merges Compustat financials, PatentsView patents and FDA drug approvals for large publicly listed pharmaceutical firms, 1980-2018, and tests whether past profitability predicts R&D spending and new drug approvals.
+Replication files for Işık and Orhangazi (2022), "Profitability and drug discovery," *Industrial and Corporate Change* ([doi:10.1093/icc/dtac011](https://doi.org/10.1093/icc/dtac011)). The code merges Compustat financials, PatentsView patents and FDA drug approvals for large publicly listed pharmaceutical firms, 1980-2018, and tests if past profitability predicts R&D spending and new drug approvals.
 
-Running the code reproduces Figures 1-3 and Tables 2-3 of the paper, and the supplementary Figure S1 and Tables S1-S3. Figures are saved as PDF in [figures-included/](figures-included/), and Table 2 as CSV in [tables-included/](tables-included/). Table 3 is printed to the console as LaTeX. The supplementary figure and tables are produced in the R session but not saved to file. Table 1 lists variable definitions and has no code.
+Running the code reproduces Figures 1-3 and Tables 2-3 of the paper, and the supplementary Figure S1 and Tables S1-S3. The figures are saved as PDF in [figures-included/](figures-included/), and Table 2 as CSV in [tables-included/](tables-included/). Table 3 is printed to the console as LaTeX. The supplementary figure and tables are produced in the R session but not saved to file. Table 1 lists variable definitions and has no code.
 
 ## Requirements
 
@@ -40,7 +40,7 @@ The script names follow the table numbering of the submitted manuscript. In the 
 | [00-setup.R](00-setup.R) | Packages, name-cleaning and helper functions, plot theme | |
 | [01-ingest-data.R](01-ingest-data.R) | Compustat pharma sample; FDA approvals matched to firms and classified as ND1 or ND2; patent counts, citations and values; flags for drug producers, top-50 firms and firms present in all years | |
 | [02-data-cleaning.R](02-data-cleaning.R) | Patents of SIC 2834-2836 firms, with NBER categories; run from 01 | |
-| [03-sample-selection.R](03-sample-selection.R) | Estimation samples (top-50 drug producers, and those observed at least 10 and 20 years); profitability, moving averages, drug and patent totals | |
+| [03-sample-selection.R](03-sample-selection.R) | Estimation samples (top-50 drug producers, and those observed for at least 10 and 20 years); profitability, moving averages, drug and patent totals | |
 | [04-figure1-financials.R](04-figure1-financials.R) | Markup, profit rate, shareholder payments and R&D: pharma vs. other nonfinancial firms | Figure 1 |
 | [05-master-data.R](05-master-data.R) | Yearly totals of drugs, patents and R&D for the top-50 firms | |
 | [06-figure2-drugs-patents.R](06-figure2-drugs-patents.R) | Patents, drug approvals and R&D productivity over time | Figure 2 |
