@@ -8,8 +8,6 @@
 # EI
 ## ===========================================================================================#
 
-#call samples 
-source(file = "empirical_analysis_sample_selection.R")
 
 
 means <- sample_top50 %>% group_by(gvkey) %>% 

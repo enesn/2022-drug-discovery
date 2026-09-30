@@ -8,8 +8,8 @@
 # EI
 ## ===========================================================================================#
 
-source("_patentdata_cleaning.R")
-source(file = "empirical_analysis_sample_selection.R")
+source("02-data-cleaning.R")
+source(file = "03-sample-selection.R")
 
 ## =================================== Scatterplots ===========================================#
 sample_top50 %>% group_by(gvkey, period2) %>% 

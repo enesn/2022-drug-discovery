@@ -11,7 +11,7 @@
 
 ## ==========================  Compustat entire pharma sample   ==============================#
 
-pharma_crsp <- read_dta("input_data/pharma_compustat.dta") %>% #SIC 2834, 35, 36
+pharma_crsp <- read_dta("raw-input-data/pharma_compustat.dta") %>% #SIC 2834, 35, 36
   dplyr:: filter(fyear > 1979) 
 
 pharma_crsp$gvkey <- sub("^0+\\B", "", pharma_crsp$gvkey) #remove leading zeros in gvkey
@@ -21,7 +21,7 @@ pharma_crsp$gvkey <- sub("^0+\\B", "", pharma_crsp$gvkey) #remove leading zeros 
 ## ==================================  FDA data ===============================================#
 
 #Import FDA drug data
-source("input_data/FDA_drug_data/FDAsponsor_name_cleaning.R")
+source("raw-input-data/FDA_drug_data/FDAsponsor_name_cleaning.R")
 
 #Unify NAs, N/As, and UNKNOWNS
 fda_drug <- fda_drug %>% 
@@ -40,7 +40,7 @@ fda_drug <- fda_drug %>%
     )
 
 #Match drugs with Compustat GVKEY
-source("input_data/FDA_drug_data/FDA_handCRSPmatching.R")
+source("raw-input-data/FDA_drug_data/FDA_handCRSPmatching.R")
 
   #Number of original drug applications 
 n_drug <-  fda_drug %>%
@@ -110,11 +110,11 @@ n_drug$drug_class <- ifelse(
 ## ==================================  Patent data   =======================================#
 
 #Import Patent data 
-source("_patentdata_cleaning.R")
+source("02-data-cleaning.R")
 
 
-kpss_2020_koganetal <- read_csv("input_data/KPSS_2020_public.csv")  %>%
-  mutate(patent_num =  as.character(patent_num)) %>%
+kpss_2020_koganetal <- read_csv("raw-input-data/KPSS_2020_public.csv")  %>%
+  dplyr::mutate(patent_num =  as.character(patent_num)) %>%
   select(-issue_date, -filing_date, -permno)
 
 crsp_pharma_patent <- crsp_pharma_patent %>% left_join(kpss_2020_koganetal, 
@@ -127,7 +127,7 @@ n_patent <- crsp_pharma_patent %>%
   dplyr::summarise(n_patent = n(), 
                    n_citations = sum(cites, na.rm = T),
                    total_xi = sum(xi_real, na.rm = T), 
-  ) %>% mutate(
+  ) %>% dplyr::mutate(
     avg_cite = n_citations / n_patent, 
     avg_xi  = total_xi / n_patent, 
   )
@@ -181,8 +181,6 @@ all_drug_producing_US <- all_drug_producing %>%
 ## =============================================================================================
 ## =============================================================================================
 
-
-
 ## ===================     Identify  Top50 firms   ============================================#
 
 pharma_crsp <- left_join(pharma_crsp, is_producer, by = "gvkey") 
@@ -225,7 +223,7 @@ rm(sic, patent_wGVKEY, patent, nber_cat, nber_subcat, nber,
 
 #Representativeness
 
-View(pharma_crsp %>%
+print(pharma_crsp %>%
        filter(drug_producer == T) %>%
        filter(top50_atleastonce == T) %>%
        dplyr::group_by(fyear) %>%
